@@ -1,0 +1,5 @@
+﻿# DB Contexts Lifecycle #
+
+=> https://learn.microsoft.com/pt-br/ef/core/dbcontext-configuration/#the-dbcontext-lifetime
+
+ 

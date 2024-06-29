@@ -1,0 +1,9 @@
+﻿=> run migrations from Output
+
+$env:DB_PRIMARY_HOST="Server=127.0.0.1;Port=3306;Database=EF_CORE_SAMPLES;Uid=root;Pwd=root;"
+dotnet ef migrations add initial_migration -c CustomContext -p '../EfCore.Core'
+ 
+=> docker pull from mysql
+
+docker pull mysql
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=root

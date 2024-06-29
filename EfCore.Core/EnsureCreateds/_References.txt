@@ -1,0 +1,5 @@
+﻿# Ensure Creation/Deletes #
+
+=> https://learn.microsoft.com/pt-br/ef/core/managing-schemas/ensure-created
+
+ 
