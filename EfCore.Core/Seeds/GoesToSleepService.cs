@@ -25,13 +25,17 @@ namespace EfCore.Core.Services
 
             var haveToCountSheep = CountOneMoreSheep();
 
+            triesToSleep.SleptAt = DateTime.UtcNow.AddMinutes(10);
+
             triesToSleep.Noise = HeardNoiseInKitchen();
+
+            triesToSleep.WokeupAt = DateTime.UtcNow.AddMinutes(10);
 
             var haveToCountSheepOneMore = CountOneMoreSheep(haveToCountSheep);
 
-            triesToSleep.CountOfSheeps = [haveToCountSheep, haveToCountSheepOneMore];
-
             triesToSleep.SleptAt = DateTime.UtcNow.AddMinutes(10);
+
+            triesToSleep.CountOfSheeps = [haveToCountSheep, haveToCountSheepOneMore];
 
             Me.Dream = HavingBadDream();
 

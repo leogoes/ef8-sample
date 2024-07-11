@@ -1,7 +1,6 @@
 ﻿using EfCore.Core.Enities;
 using EfCore.Core.EntitiesTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace EfCore.Core.DbContexts
 {
@@ -34,10 +33,7 @@ namespace EfCore.Core.DbContexts
             optionsBuilder.UseMySql(connectionString, serverVersion, options =>
             {
                 options.EnableRetryOnFailure();
-            })
-            .LogTo(Console.WriteLine, LogLevel.Information)
-            .EnableDetailedErrors()
-            .EnableSensitiveDataLogging();
+            });
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -63,10 +59,7 @@ namespace EfCore.Core.DbContexts
             optionsBuilder.UseMySql(connectionString, serverVersion, options =>
             {
                 options.EnableRetryOnFailure();
-            })
-            .LogTo(Console.WriteLine, LogLevel.Information)
-            .EnableDetailedErrors()
-            .EnableSensitiveDataLogging();
+            });
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
