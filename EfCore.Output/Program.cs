@@ -10,8 +10,10 @@ var connectionString = Environment.GetEnvironmentVariable("DB_PRIMARY_HOST") ?? 
 
 Console.WriteLine(connectionString);
 
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 38));
+
 builder.Services.AddDbContext<CustomContext>(x =>
-    x.UseMySql(ServerVersion.AutoDetect(connectionString), options =>
+    x.UseMySql(connectionString, serverVersion, options =>
     {
         options.EnableRetryOnFailure();
     })
@@ -21,4 +23,6 @@ builder.Services.AddDbContext<CustomContext>(x =>
 );
 
 IHost host = builder.Build();
+
 host.Run();
+

@@ -1,8 +1,9 @@
 ﻿using EfCore.Core.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
-namespace EfCore.Core.EnsureCreateds
+namespace EfCore.Core.ManagingSchemas.EnsureCreated
 {
-    public class Ensurance(CustomContext context)
+    public class Ensurance(DbContext context)
     {
         /// <summary>
         /// EnsureCreated criará o banco de dados se ele não existir e inicializará o esquema de banco de dados. 

@@ -18,10 +18,23 @@ namespace EfCore.Core.EntitiesTypeConfiguration
 
             builder.HasOne(x => x.Person)
                    .WithMany(x => x.Sleeps)
-                   .HasForeignKey(x => x.Id);
+                   .HasForeignKey(x => x.PersonId);
 
-            SleepOwnedTypes.OwnsOneNoise(builder);
-            SleepOwnedTypes.OwnsManyCountOfSheeps(builder);
+            builder.OwnsOne(x => x.Noise);
+
+            builder.OwnsMany(x => x.CountOfSheeps, sheep =>
+            {
+                sheep.WithOwner().HasForeignKey(x => x.SleepId);
+
+                sheep.Property(x => x.Id);
+                sheep.Property(x => x.Number).HasColumnName("SheepNumber");
+                sheep.Property(x => x.Name).HasColumnName("SheepName");
+
+                sheep.HasKey(x => x.Id);
+            });
+
+            //SleepOwnedTypes.OwnsOneNoise(builder);
+            //SleepOwnedTypes.OwnsManyCountOfSheeps(builder);
         }
     }
 }

@@ -11,7 +11,6 @@ namespace EfCore.Core.Enities
         public DateTime? WokeupAt { get; set; }
         public IEnumerable<Sheep>? CountOfSheeps { get; set; }
         public NoiseDuringSleep? Noise { get; set; }
-
         public virtual Person? Person { get; set; }
     }
 }

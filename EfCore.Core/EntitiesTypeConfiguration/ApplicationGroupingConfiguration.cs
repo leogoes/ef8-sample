@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EfCore.Core.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace EfCore.Core.EntitiesTypeConfiguration
@@ -12,7 +13,7 @@ namespace EfCore.Core.EntitiesTypeConfiguration
     {
         public static void ApplyAllConfigurations(ModelBuilder modelBuilder)
         {
-            var currentAssembly = Assembly.GetEntryAssembly() ?? throw new Exception($"invalid assembly on {nameof(ApplicationGroupingConfiguration)}");
+            var currentAssembly = Assembly.GetAssembly(typeof(CustomContext)) ?? throw new Exception($"invalid assembly on {nameof(ApplicationGroupingConfiguration)}");
 
             modelBuilder.ApplyConfigurationsFromAssembly(currentAssembly);
         }
