@@ -1,4 +1,4 @@
-﻿using EfCore.Core.Enities;
+﻿using EfCore.Core.Entities;
 using EfCore.Core.OwnsEntityTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

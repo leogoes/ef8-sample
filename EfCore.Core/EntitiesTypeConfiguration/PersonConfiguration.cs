@@ -1,6 +1,6 @@
-﻿using EfCore.Core.Enities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using EfCore.Core.Entities;
 
 namespace EfCore.Core.EntitiesTypeConfiguration
 {

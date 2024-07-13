@@ -1,7 +1,6 @@
-﻿using EfCore.Core.Entities;
-using EfCore.Core.Entities.Abstractions;
+﻿using EfCore.Core.Entities.Abstractions;
 
-namespace EfCore.Core.Enities
+namespace EfCore.Core.Entities
 {
     public class Sleep : IEntity
     {

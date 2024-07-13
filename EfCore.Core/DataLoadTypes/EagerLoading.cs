@@ -1,5 +1,5 @@
 ﻿using EfCore.Core.DbContexts;
-using EfCore.Core.Services;
+using EfCore.Core.Seeds;
 using Microsoft.EntityFrameworkCore;
 
 namespace EfCore.Core.DataLoadTypes

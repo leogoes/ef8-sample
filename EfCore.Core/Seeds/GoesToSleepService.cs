@@ -1,8 +1,7 @@
 ﻿using EfCore.Core.DbContexts;
-using EfCore.Core.Enities;
 using EfCore.Core.Entities;
 
-namespace EfCore.Core.Services
+namespace EfCore.Core.Seeds
 {
     public class GoesToSleepService
     {

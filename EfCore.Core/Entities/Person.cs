@@ -1,6 +1,6 @@
 ﻿using EfCore.Core.Entities.Abstractions;
 
-namespace EfCore.Core.Enities
+namespace EfCore.Core.Entities
 {
     public class Person : IAggregateRoot
     {

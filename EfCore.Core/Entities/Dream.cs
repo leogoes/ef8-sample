@@ -1,7 +1,7 @@
 ﻿using EfCore.Core.Entities.Abstractions;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace EfCore.Core.Enities
+namespace EfCore.Core.Entities
 {
     public class Dream : IEntity
     {

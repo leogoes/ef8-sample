@@ -1,5 +1,5 @@
 ﻿using EfCore.Core.DbContexts;
-using EfCore.Core.Services;
+using EfCore.Core.Seeds;
 using System;
 using System.Collections.Generic;
 using System.Linq;

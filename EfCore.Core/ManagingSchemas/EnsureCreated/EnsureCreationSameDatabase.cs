@@ -1,9 +1,8 @@
 ﻿using EfCore.Core.DbContexts;
-using EfCore.Core.ManagingSchemas.EnsureCreated;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace EfCore.Core.EnsureCreateds.TwoContextsEnsurance
+namespace EfCore.Core.ManagingSchemas.EnsureCreated
 {
     public class EnsureCreationSameDatabase
     {
