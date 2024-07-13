@@ -15,6 +15,10 @@ namespace EfCore.Core.RawSqls
 
             command.CommandText = "SELECT 1";
             command.ExecuteNonQuery();
+
+            context.Database.ExecuteSqlRaw("SELECT * from dreams WHERE ID = {0}", 20);
+            context.Database.ExecuteSqlInterpolated($"SELECT * from dreams WHERE ID = {20}");
         }
+
     }
 }

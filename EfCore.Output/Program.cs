@@ -1,6 +1,5 @@
-﻿using EfCore.Core.ConnectionManagements;
+﻿using EfCore.Core.DataLoadTypes;
 using EfCore.Core.DbContexts;
-using EfCore.Core.RawSqls;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,9 +15,9 @@ Console.WriteLine(connectionString);
 builder.Logging.Services.AddSerilog();
 
 Log.Logger = new LoggerConfiguration()
-           .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", Serilog.Events.LogEventLevel.Information)
            .Enrich.WithProperty("app", "Sample")
            .Enrich.FromLogContext()
+           .WriteTo.Console()
            .CreateLogger();
 
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 38));
@@ -29,6 +28,7 @@ builder.Services.AddDbContext<CustomContext>(x =>
         options.EnableRetryOnFailure();
     })
     .LogTo(Console.WriteLine, LogLevel.Information)
+    //.UseLazyLoadingProxies()
     .EnableDetailedErrors()
     .EnableSensitiveDataLogging()
 );
@@ -37,7 +37,7 @@ IHost host = builder.Build();
 
 var context = host.Services.GetRequiredService<CustomContext>();
 
-ExecuteRawSql.Execute(context);
+await LazyLoading.Load(context);
 
 host.Run();
 

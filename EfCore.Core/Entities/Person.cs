@@ -7,6 +7,6 @@ namespace EfCore.Core.Enities
         public Guid Id { get; set; }
         public Guid DreamId { get; set; }
         public Dream? Dream { get; set; }
-        public IEnumerable<Sleep>? Sleeps { get; set; }
+        public virtual IEnumerable<Sleep>? Sleeps { get; set; }
     }
 }

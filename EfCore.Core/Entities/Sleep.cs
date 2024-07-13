@@ -9,7 +9,7 @@ namespace EfCore.Core.Enities
         public Guid PersonId { get; set; }
         public DateTime? SleptAt { get; set; }
         public DateTime? WokeupAt { get; set; }
-        public IEnumerable<Sheep>? CountOfSheeps { get; set; }
+        public virtual IEnumerable<Sheep>? CountOfSheeps { get; set; }
         public NoiseDuringSleep? Noise { get; set; }
         public virtual Person? Person { get; set; }
     }

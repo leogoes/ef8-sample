@@ -9,8 +9,10 @@ namespace EfCore.Core.Services
         public static async Task GoesToSleep(CustomContext context)
         {
             var me = GoesToSleep();
+            var someoneElse = GoesToSleep();
 
             await context.Peoples.AddAsync(me);
+            await context.Peoples.AddAsync(someoneElse);
 
             await context.SaveChangesAsync();
         }
