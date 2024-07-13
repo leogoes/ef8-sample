@@ -1,5 +1,6 @@
 ﻿using EfCore.Core.DataLoadTypes;
 using EfCore.Core.DbContexts;
+using EfCore.Core.QueryProducers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,7 +38,7 @@ IHost host = builder.Build();
 
 var context = host.Services.GetRequiredService<CustomContext>();
 
-await LazyLoading.Load(context);
+QuerySplit.SplitQuery(context);
 
 host.Run();
 
