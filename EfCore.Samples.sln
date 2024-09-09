@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Core", "EfCore.Core\EfCore.Core.csproj", "{CB7E706E-8875-4AB4-A276-1603C6787B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Output", "EfCore.Output\EfCore.Output.csproj", "{078D4E17-864D-45E8-B6B4-AAB8D475129B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore.Output", "EfCore.Output\EfCore.Output.csproj", "{078D4E17-864D-45E8-B6B4-AAB8D475129B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCore.Infrastructure", "EfCore.Infrastructure\EfCore.Infrastructure.csproj", "{867F2110-9675-4D7B-B953-59764B2C3437}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{078D4E17-864D-45E8-B6B4-AAB8D475129B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{078D4E17-864D-45E8-B6B4-AAB8D475129B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{078D4E17-864D-45E8-B6B4-AAB8D475129B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867F2110-9675-4D7B-B953-59764B2C3437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867F2110-9675-4D7B-B953-59764B2C3437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867F2110-9675-4D7B-B953-59764B2C3437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867F2110-9675-4D7B-B953-59764B2C3437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

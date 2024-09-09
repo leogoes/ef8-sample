@@ -1,6 +1,7 @@
 ﻿using EfCore.Core.Entities;
 using EfCore.Core.EntitiesTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
+using EfCore.Infrastructure.Loggings;
 
 namespace EfCore.Core.DbContexts
 {
@@ -20,6 +21,7 @@ namespace EfCore.Core.DbContexts
 
     public class ContextSampleA() : DbContext
     {
+        private readonly StreamWriter writer = new("local_file_ef_log.txt", append: true);
         public DbSet<Sleep> Sleeps { get; set; }
         public DbSet<Dream> Dreams { get; set; }
         public DbSet<Person> Peoples { get; set; }
@@ -33,7 +35,14 @@ namespace EfCore.Core.DbContexts
             optionsBuilder.UseMySql(connectionString, serverVersion, options =>
             {
                 options.EnableRetryOnFailure();
-            });
+            })
+            .WriteLogToFile(writer);
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            writer.Dispose();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
