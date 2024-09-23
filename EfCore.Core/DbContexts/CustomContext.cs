@@ -1,7 +1,7 @@
 ﻿using EfCore.Core.Entities;
 using EfCore.Core.EntitiesTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
-using EfCore.Infrastructure.Loggings;
+using EfCore.Core.Loggings;
 
 namespace EfCore.Core.DbContexts
 {

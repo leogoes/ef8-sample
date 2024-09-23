@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EfCore.Core\EfCore.Core.csproj" />
-    <ProjectReference Include="..\EfCore.Infrastructure\EfCore.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

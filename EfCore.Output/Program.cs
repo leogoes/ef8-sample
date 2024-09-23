@@ -7,7 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using EfCore.Infrastructure.Loggings;
+using EfCore.Core.BatchSize;
+using EfCore.Core.Loggings;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -41,6 +42,7 @@ static void CreateCustomContext(HostApplicationBuilder builder, string connectio
         x.UseMySql(connectionString, serverVersion, options =>
         {
             options.EnableRetryOnFailure();
+            options.ChangeDefaultBatchSize(42, 1);
         })
         .CustomLogTo()
         .EnableDetailedErrors()

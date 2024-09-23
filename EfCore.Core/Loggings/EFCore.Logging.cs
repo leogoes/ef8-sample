@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Logging;
 
-namespace EfCore.Infrastructure.Loggings
+namespace EfCore.Core.Loggings
 {
     public static class EFCoreLogging
     {
@@ -14,7 +14,7 @@ namespace EfCore.Infrastructure.Loggings
         public static DbContextOptionsBuilder FilterLogByEvents(this DbContextOptionsBuilder builder)
         {
             return builder.LogTo(
-                    Console.WriteLine, 
+                    Console.WriteLine,
                     new[] { CoreEventId.ContextInitialized, RelationalEventId.CommandExecuted },
                     LogLevel.Information,
                     DbContextLoggerOptions.LocalTime | DbContextLoggerOptions.SingleLine
